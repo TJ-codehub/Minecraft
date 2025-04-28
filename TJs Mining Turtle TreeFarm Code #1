@@ -1,0 +1,24 @@
+local hight = 0
+
+local function CutTree()
+	turtle.dig()
+	turtle.digUp()
+	turtle.up()
+	hight = hight + 1
+end
+
+repeat
+	turtle.select(2)
+	if turtle.compare() == true then
+		repeat
+			CutTree()
+		until turtle.compare() == false
+	end
+	
+	for i = 1, hight do
+		turtle.down()
+	end
+
+	turtle.select(1)
+	turtle.place()
+until turtle.detect() == false
