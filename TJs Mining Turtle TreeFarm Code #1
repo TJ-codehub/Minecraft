@@ -17,8 +17,9 @@ repeat
 	
 	for i = 1, hight do
 		turtle.down()
+		turtle.select(1)
+		turtle.place()
 	end
 
-	turtle.select(1)
-	turtle.place()
+	
 until turtle.detect() == false
